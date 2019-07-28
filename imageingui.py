@@ -1,0 +1,17 @@
+from tkinter import *
+win=Tk()
+c=Canvas(win,bg='purple',width=900,height=500)
+win.wm_iconbitmap('img.ico')
+file1=PhotoImage(file='2-cute-pikachu.gif')
+file2=PhotoImage(file='tenor.gif')
+file3=PhotoImage(file='gifimage.gif')
+id=c.create_image(30,30,anchor=NW,image=file1,activeimage=file2)
+id=c.create_image(400,320,anchor=NW,image=file3,activeimage=file1)
+fnt=('Times',40,'bold italic underline')
+id=c.create_text(30,20,text='this is pikachu',fill='black',activefill='green',font=fnt)
+b=Button(win,text='my button')
+def buttonclick(self):
+    print('you have clicked me')
+b.bind('<Button-1>',buttonclick)    
+c.pack()
+win.mainloop()
